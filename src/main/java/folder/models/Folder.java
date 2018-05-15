@@ -1,8 +1,10 @@
 package folder.models;
 
-import org.apache.commons.collections.iterators.EmptyListIterator;
-
+import javax.persistence.*;
 import java.util.Set;
+
+@Entity
+@Table(name="folder")
 
 public class Folder {
 
@@ -17,6 +19,9 @@ public class Folder {
 
     public Folder(){}
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     public int getId() {
         return id;
     }
@@ -25,6 +30,7 @@ public class Folder {
         this.id = id;
     }
 
+    @Column(name="title")
     public String getTitle() {
         return title;
     }
@@ -33,6 +39,7 @@ public class Folder {
         this.title = title;
     }
 
+    @OneToMany(mappedBy = "folder")
     public Set<File> getFiles() {
         return files;
     }

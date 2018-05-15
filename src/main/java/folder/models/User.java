@@ -1,5 +1,7 @@
 package folder.models;
 
+
+
 public class User {
 
     private int id;

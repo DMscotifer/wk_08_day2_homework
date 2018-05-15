@@ -1,5 +1,3 @@
-package folder;
-
 import folder.db.DBHelper;
 import folder.models.File;
 import folder.models.Folder;
@@ -22,6 +20,8 @@ public class Runner {
         DBHelper.save(file2);
 
         List<File> files = DBHelper.getAll(File.class);
+
+        List<Folder> folders = DBHelper.getAll(Folder.class);
 
     }
 }
