@@ -10,7 +10,7 @@ public class Folder {
     private String title;
     private Set<File> files;
 
-    public Folder(String title, Set<File> files) {
+    public Folder(String title) {
         this.title = title;
         this.files = files;
     }
