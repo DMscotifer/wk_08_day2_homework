@@ -1,4 +1,5 @@
 import folder.db.DBHelper;
+import folder.db.DBUser;
 import folder.models.File;
 import folder.models.Folder;
 import folder.models.User;
@@ -30,6 +31,8 @@ public class Runner {
         List<File> files = DBHelper.getAll(File.class);
 
         List<Folder> folders = DBHelper.getAll(Folder.class);
+
+        List<Folder> ownedFolders = DBUser.getOwnedFolders(user1);
 
     }
 }
